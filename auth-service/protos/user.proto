@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "/genproto";
+
+package protos;
+
+import "common.proto";
+service UserService {
+    rpc CreateUser(User) returns (Void) {}
+    rpc DeleteUser(IdRequest) returns (Void) {}
+    rpc UpdateUser(User) returns(Void){}
+    rpc GetByIdUser(IdRequest) returns (User) {}
+    rpc GetAllUser(User) returns (GetAllUsers){}
+    rpc LoginUser(User) returns (User){}
+}
+
+
+
+message User {
+    string id        = 1;
+    string user_name = 2;
+    string password  = 3;
+    string email     = 4;
+    string created_at= 5;
+    string updeted_at= 6;
+    string deleted_at= 7;
+}
+
+message GetAllUsers {
+    repeated User users = 1;
+}

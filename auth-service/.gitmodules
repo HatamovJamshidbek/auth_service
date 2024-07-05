@@ -1,0 +1,3 @@
+[submodule "forum-submodule"]
+	path = forum-submodule
+	url = git@github.com:dilshodforever/forum-submodule.git
